@@ -6,6 +6,11 @@ class ImagemagickAT71147 < Formula
   license "ImageMagick"
   head "https://github.com/ImageMagick/ImageMagick.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/kanemu/homebrew-tap-for-ventura/releases/download/imagemagick-7.1.1.47"
+    sha256 ventura: "c31a8d470d6d2f05d4cffbe86c9590a631c95eba9da5bee7f7243f27677839d8"
+  end
+
   livecheck do
     url "https://imagemagick.org/archive/"
     regex(/href=.*?ImageMagick[._-]v?(\d+(?:\.\d+)+-\d+)\.t/i)
