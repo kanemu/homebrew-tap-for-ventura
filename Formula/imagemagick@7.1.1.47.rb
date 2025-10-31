@@ -15,14 +15,12 @@ class ImagemagickAT71147 < Formula
   depends_on "fontconfig"
   depends_on "freetype"
   depends_on "jpeg-turbo"
-  depends_on "libheif"
   depends_on "liblqr"
   depends_on "libpng"
   depends_on "libraw"
   depends_on "libtiff"
   depends_on "libtool"
   depends_on "little-cms2"
-  depends_on "openexr"
   depends_on "openjpeg"
   depends_on "webp"
   depends_on "xz"
@@ -60,9 +58,7 @@ class ImagemagickAT71147 < Formula
       "--with-gvc=no",
       "--with-modules",
       "--with-openjp2",
-      "--with-openexr",
       "--with-webp=yes",
-      "--with-heic=yes",
       "--with-raw=yes",
       "--without-gslib",
       "--with-gs-font-dir=#{HOMEBREW_PREFIX}/share/ghostscript/fonts",
@@ -99,7 +95,7 @@ class ImagemagickAT71147 < Formula
 
     # Check support for recommended features and delegates.
     features = shell_output("#{bin}/magick -version")
-    %w[Modules freetype heic jpeg png raw tiff].each do |feature|
+    %w[Modules freetype jpeg png raw tiff jp2 webp].each do |feature|
       assert_match feature, features
     end
 
