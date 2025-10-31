@@ -11,6 +11,7 @@ class ImagemagickAT71147 < Formula
     regex(/href=.*?ImageMagick[._-]v?(\d+(?:\.\d+)+-\d+)\.t/i)
   end
 
+  depends_on "kanemu/tap-for-ventura/openjph@0.24.4"
   depends_on "pkgconf" => :build
   depends_on "fontconfig"
   depends_on "freetype"
